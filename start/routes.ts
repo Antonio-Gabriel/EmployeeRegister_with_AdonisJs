@@ -33,7 +33,7 @@ Route.post('/login', async ({ auth, request, response }) => {
     const token = await auth.use('api').attempt(login, password)
     return token
   } catch (error) {
-    return response.badRequest('Invalid Credentials', error)
+    return response.badRequest('Invalid Credentials' + error)
   }
 })
 

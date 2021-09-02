@@ -6,8 +6,8 @@ export default class LoginSeeder extends BaseSeeder {
     // Write your database queries inside the run method
     await Login.createMany([
       {
-        login: 'antonio.gabriel',
-        password: 'antoniocampos',
+        email: 'antonio.gabriel@gmail.com',
+        password: 'admin',
         employeeId: 1,
       },
     ])
