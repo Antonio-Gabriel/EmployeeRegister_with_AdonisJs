@@ -25,17 +25,7 @@ Route.get('/', async () => {
   return { hello: 'world' }
 })
 
-Route.post('/login', async ({ auth, request, response }) => {
-  const login = request.input('login')
-  const password = request.input('password')
-
-  try {
-    const token = await auth.use('api').attempt(login, password)
-    return token
-  } catch (error) {
-    return response.badRequest('Invalid Credentials' + error)
-  }
-})
+Route.post('/login', 'AuthController.login')
 
 Route.group(() => {
   Route.get('', () => {
