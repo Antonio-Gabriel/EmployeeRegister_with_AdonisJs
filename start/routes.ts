@@ -27,6 +27,8 @@ Route.get('/', async () => {
 
 Route.post('/login', 'AuthController.login')
 
+Route.post('/logout', 'AuthController')
+
 Route.group(() => {
   Route.get('', () => {
     const data = Database.from('residences').select('*')
